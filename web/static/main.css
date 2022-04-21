@@ -105,6 +105,10 @@ body {
   background-image: url(../static/img/microsoft-icon.svg);
 }
 
+.dex-btn-icon--msoidc {
+  background-image: url(../static/img/microsoft-icon.svg);
+}
+
 .dex-btn-text {
   font-weight: 600;
   line-height: 36px;
