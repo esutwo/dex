@@ -119,7 +119,7 @@ func (c *Config) Open(id string, logger log.Logger) (conn connector.Connector, e
 	}
 
 	endpoint := provider.Endpoint()
-	fmt.Println(endpoint)
+	//fmt.Println(endpoint)
 
 	if c.BasicAuthUnsupported != nil {
 		// Setting "basicAuthUnsupported" always overrides our detection.
@@ -265,7 +265,7 @@ func (c *msoidcConnector) HandleCallback(s connector.Scopes, r *http.Request) (i
 		return identity, &oauth2Error{errType, q.Get("error_description")}
 	}
 	
-	fmt.Println(q)
+	//fmt.Println(q)
 	//time.Sleep(10 * time.Second)
 	token, err := c.oauth2Config.Exchange(r.Context(), q.Get("code"))
 	if err != nil {
@@ -304,7 +304,7 @@ func (c *msoidcConnector) createIdentity(ctx context.Context, identity connector
 	if err != nil {
 		return identity, fmt.Errorf("msoidc: failed to verify ID Token: %v", err)
 	}
-	fmt.Println(rawIDToken)
+	//fmt.Println(rawIDToken)
 
 	var claims map[string]interface{}
 	if err := idToken.Claims(&claims); err != nil {
